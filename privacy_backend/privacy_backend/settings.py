@@ -52,11 +52,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'privacy_backend.urls'
-path = "/Users/sckdk/Project/privacy_labels_site/"
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(path, 'privacy_frontend/build')],
+        'DIRS': [os.path.join(BASE_DIR, 'privacy_frontend/build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,7 +121,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    os.path.join(path, 'privacy_frontend/build/static')
+    os.path.join(BASE_DIR, 'privacy_frontend/build/static')
 ]
 
 # Default primary key field type
