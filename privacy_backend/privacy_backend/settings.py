@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "djongo",
     "apps",
     "corsheaders",
     "rest_framework",
@@ -83,9 +82,10 @@ WSGI_APPLICATION = "privacy_backend.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "djongo",
-        "NAME": "privacydatabase",
-        "HOST": "localhost",
-        "PORT": 27017,
+        "NAME": "privacynames",
+        "CLIENT": {
+            "host": "mongodb+srv://admin:UmlXaX1sRGh4@mothership.o5jycuk.mongodb.net"
+        },
     }
 }
 
