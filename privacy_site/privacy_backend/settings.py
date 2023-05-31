@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-b-3r)m&480ha7bup1so#dcw-!vy0io-#&jpm48au-wu7s72ov4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1"]
 
 
 # Application definition
@@ -86,6 +86,12 @@ DATABASES = {
         "CLIENT": {
             "host": "mongodb+srv://admin:UmlXaX1sRGh4@mothership.o5jycuk.mongodb.net"
         },
+        # "ENGINE": "django.db.backends.mysql",
+        # "NAME": "testdb",
+        # "USER": "root",
+        # "PASSWORD": "Soccer123!",
+        # "HOST": "127.0.0.1",
+        # "PORT": "3306",
     }
 }
 
@@ -126,7 +132,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "privacy_frontend/build/static")]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "privacy_frontend/build/")]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
