@@ -4,11 +4,16 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { Header } from "./Frontend";
 import reportWebVitals from "./reportWebVitals";
+import { QueryClientProvider, QueryClient } from "react-query";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+const queryClient = new QueryClient()
+
 root.render(
   //<React.StrictMode>
-  <Header />
+  <QueryClientProvider client={queryClient}>
+    <Header />
+  </QueryClientProvider>
   //</React.StrictMode>
 );
 
