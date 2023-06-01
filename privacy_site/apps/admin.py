@@ -16,5 +16,7 @@ class AppAdmin(admin.ModelAdmin):
         "app_url",
     )
 
+    ordering = ["app_name"]
+
 
 admin.site.register(App, AppAdmin)
