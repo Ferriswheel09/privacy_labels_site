@@ -1,31 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-const apps = [
-  {
-    id: 3,
-    app_name: "Instagram",
-    privacy_type: "L",
-    purpose: "P",
-    data_category: "SH",
-    data_type: "B",
-    release_date: "2023-05-31",
-    version_release_date: "2023-05-31",
-    app_url: "",
-  },
-  {
-    id: 4,
-    app_name: "Snapchat",
-    privacy_type: "NL",
-    purpose: "AP",
-    data_category: "UC",
-    data_type: "D",
-    release_date: "2023-06-01",
-    version_release_date: "2023-06-01",
-    app_url: "",
-  },
-];
-
 class Table extends Component {
   constructor(props) {
     super(props);
