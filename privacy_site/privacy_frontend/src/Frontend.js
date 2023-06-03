@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 import {Table} from "./components/table";
-import {useQuery } from 'react-query'
+import {useQuery} from 'react-query'
 
 export const Header = (props) => {
   const { isLoading, error, data } = useQuery('repoData', () =>
@@ -11,7 +11,6 @@ export const Header = (props) => {
   if (isLoading) return 'Loading...'
 
   if (error) return 'An error has occurred: ' + error.message
-
 
   console.log(data)
   return (
