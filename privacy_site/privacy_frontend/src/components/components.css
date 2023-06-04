@@ -1,0 +1,12 @@
+.hyperlink{
+    color: blue;
+    cursor: pointer;
+}
+.box{
+    position: absolute;
+    text-align: center;
+    border: 2px solid black;
+    width: 30%;
+    left: 35%;
+    top: 30%;
+}

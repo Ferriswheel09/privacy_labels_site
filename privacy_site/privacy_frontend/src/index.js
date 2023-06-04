@@ -5,6 +5,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import { Header } from "./Frontend";
 import reportWebVitals from "./reportWebVitals";
 import { QueryClientProvider, QueryClient } from "react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {NoPage} from "./components/NoPage"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const queryClient = new QueryClient({
@@ -18,12 +20,22 @@ const queryClient = new QueryClient({
   },
 });
 
+const WrappedHeader = () =>{
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Header />
+    </QueryClientProvider>
+  )
+}
+
 root.render(
-  //<React.StrictMode>
-  <QueryClientProvider client={queryClient}>
-    <Header />
-  </QueryClientProvider>
-  //</React.StrictMode>
+  <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<WrappedHeader/>}/>
+          <Route path="*" element={<NoPage />} />
+        <Route/>
+      </Routes>
+    </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
