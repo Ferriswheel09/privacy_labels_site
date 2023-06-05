@@ -7,6 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import { QueryClientProvider, QueryClient } from "react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {NoPage} from "./components/NoPage"
+import {DataView} from "./components/DataView"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const queryClient = new QueryClient({
@@ -27,12 +28,12 @@ const WrappedHeader = () =>{
     </QueryClientProvider>
   )
 }
-
 root.render(
   <BrowserRouter>
       <Routes>
         <Route path="/" element={<WrappedHeader/>}/>
-          <Route path="*" element={<NoPage />} />
+          <Route path="/id/:id" element={<DataView/>}/>
+          <Route path="*" element={<NoPage/>}/>
         <Route/>
       </Routes>
     </BrowserRouter>
