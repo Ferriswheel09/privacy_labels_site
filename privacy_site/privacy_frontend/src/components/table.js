@@ -1,10 +1,11 @@
-import React from "react";
-import "./table.css";
-
-const [sortedField, setSortedField] = React.useState(null);
+import React, { Component } from "react";
+import { useNavigate } from "react-router-dom";
+import "./components.css";
 
 export const Table = (props) => {
   const appList = props.appList;
+  const navigate = useNavigate();
+
   return (
     <div>
       <table className="table table-hover">
@@ -25,7 +26,12 @@ export const Table = (props) => {
           {appList.map((item) => (
             <tr key={item.id} onClick={(event) => handleClick(item.id)}>
               <th scope="row">{item.id}</th>
-              <td>{item.app_name}</td>
+              <td
+                className="hyperlink"
+                onClick={() => navigate(`/id/${item.id}`)}
+              >
+                {item.app_name}
+              </td>
               <td>{privacyTypeMethod(item.privacy_type)}</td>
               <td>{purposeMethod(item.purpose)}</td>
               <td>{dataCategoryMethod(item.data_category)}</td>

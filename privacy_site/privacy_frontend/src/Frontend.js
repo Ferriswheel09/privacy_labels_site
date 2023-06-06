@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Table } from "./components/table";
 import { useQuery } from "react-query";
 
@@ -8,8 +8,6 @@ export const Header = (props) => {
   );
 
   if (isLoading) return "Loading...";
-
-  if (error) return "An error has occurred: " + error.message;
 
   console.log(data);
 
