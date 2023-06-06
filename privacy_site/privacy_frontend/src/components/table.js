@@ -1,10 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
+import "./table.css";
+
+const [sortedField, setSortedField] = React.useState(null);
 
 export const Table = (props) => {
-  const appList = props.appList
+  const appList = props.appList;
   return (
     <div>
-      <table className="table">
+      <table className="table table-hover">
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -20,7 +23,7 @@ export const Table = (props) => {
         </thead>
         <tbody>
           {appList.map((item) => (
-            <tr key={item.id}>
+            <tr key={item.id} onClick={(event) => handleClick(item.id)}>
               <th scope="row">{item.id}</th>
               <td>{item.app_name}</td>
               <td>{privacyTypeMethod(item.privacy_type)}</td>
@@ -36,6 +39,10 @@ export const Table = (props) => {
       </table>
     </div>
   );
+};
+
+function handleClick(num) {
+  console.log(num);
 }
 
 function privacyTypeMethod(str) {

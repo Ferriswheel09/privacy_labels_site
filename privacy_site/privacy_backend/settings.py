@@ -81,17 +81,17 @@ WSGI_APPLICATION = "privacy_backend.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "djongo",
-        "NAME": "privacynames",
-        "CLIENT": {
-            "host": "mongodb+srv://admin:UmlXaX1sRGh4@mothership.o5jycuk.mongodb.net"
-        },
-        # "ENGINE": "django.db.backends.mysql",
-        # "NAME": "testdb",
-        # "USER": "root",
-        # "PASSWORD": "Soccer123!",
-        # "HOST": "127.0.0.1",
-        # "PORT": "3306",
+    #    "ENGINE": "djongo",
+    #    "NAME": "privacynames",
+    #    "CLIENT": {
+    #        "host": "mongodb+srv://admin:UmlXaX1sRGh4@mothership.o5jycuk.mongodb.net"
+    #    },
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "apps",
+        "USER": "root",
+        "PASSWORD": "Soccer123!",
+        "HOST": "127.0.0.1",
+        "PORT": "3306",
     }
 }
 

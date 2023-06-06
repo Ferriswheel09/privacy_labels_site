@@ -1,0 +1,9 @@
+.table-hover tbody tr:hover td {
+  background-color: #45b5e9;
+  cursor: pointer;
+}
+
+.table-hover thead tr:hover {
+  background-color: aqua;
+  cursor: pointer;
+}

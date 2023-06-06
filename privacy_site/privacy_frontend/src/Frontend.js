@@ -1,23 +1,22 @@
 import React from "react";
-import {Table} from "./components/table";
-import {useQuery } from 'react-query'
+import { Table } from "./components/table";
+import { useQuery } from "react-query";
 
 export const Header = (props) => {
-  const { isLoading, error, data } = useQuery('repoData', () =>
-    fetch("http://localhost:8000/api/apps").then(res =>
-      res.json()
-    )
-  )
-  if (isLoading) return 'Loading...'
+  const { isLoading, error, data } = useQuery("repoData", () =>
+    fetch("http://localhost:8000/api/apps").then((res) => res.json())
+  );
 
-  if (error) return 'An error has occurred: ' + error.message
+  if (isLoading) return "Loading...";
 
+  if (error) return "An error has occurred: " + error.message;
 
-  console.log(data)
+  console.log(data);
+
   return (
     <div>
       <h1 className="display-4 text-primary">Privacy Observatory</h1>
-      <Table appList={data}/>
+      <Table appList={data} />
     </div>
   );
 };
